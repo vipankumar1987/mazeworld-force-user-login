@@ -15,7 +15,7 @@ License: GPLv2 or later
 
 final Class MazeWorld
 {
-	private $static;
+	private static $static;
 	public function __construct()
 	{
 		add_action('init', array($this, 'requireLogin'));		
@@ -71,7 +71,7 @@ final Class MazeWorld
 
 		// Redirect visitors
 		if ( preg_replace('/\?.*/', '', $url) != preg_replace('/\?.*/', '', wp_login_url()) && !in_array($url, $whitelist) ) {
-		  $this->safeRedirect($redirect_url)
+		  $this->safeRedirect($redirect_url);
 		}
 	  }
 	  else {
